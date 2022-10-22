@@ -1,0 +1,36 @@
+classDiagram
+    ScooterApp <|-- User
+    User <|-- Scooter
+
+    class Scooter {
+        +string stations
+        -string user
+        +number serial
+        +number charge
+        +bool isBroken : intially false
+        +bool docked : intially true
+        +rent()
+        +dock(station)
+        +recharge()
+        +requestRepair()
+
+    }
+
+    class User {
+        +string username
+        +string password
+        +number age
+
+    }
+
+    class ScooterApp {
+        +string stations
+        +array registeredUsers
+        +array scooterSessions $
+        +register(user)
+        +logIn(username, password)
+        +addScooter(location, scooter)
+        +RemoveScooter(scooterToRemove)
+    }
+
+
