@@ -19,12 +19,12 @@ class ScooterApp {
   static sessions = [];
 
   register(user) {
-    const existingUsers = Object.keys(this.registeredUsers)
+    const existingUsers = Object.keys(this.registeredUsers);
     if (user.age < 18) {
       console.log("Too young to register");
     }
     else if (existingUsers.includes(user.username)) {
-      console.log("already exists")
+      console.log("already exists");
     } 
     else {
       const obj = {
@@ -33,7 +33,7 @@ class ScooterApp {
         loggedIn: false,
         accountChange: 0
       };
-      this.registeredUsers[user.username] = obj
+      this.registeredUsers[user.username] = obj;
       console.log("User has been registered");
     }
   }
@@ -54,7 +54,7 @@ class ScooterApp {
     scooter.station = location;
     if (Object.keys(this.stations).includes(location)){
       this.stations[location].push(scooter);
-      console.log("Scooter has been added successfully.")
+      console.log("Scooter has been added successfully.");
     }
     else {
       console.log("Cannot add Scooter, Location doesn't exist.");
@@ -68,15 +68,15 @@ class ScooterApp {
         if (location.serial === scooterSerial) {
           let indexOfLocation = this.stations[key].indexOf(location);
           this.stations[key].splice(indexOfLocation, 1);
-          console.log("Scooter has successfully been removed")
+          console.log("Scooter has successfully been removed");
           
         }
         else {
-          console.log("Cannot remove the scooter")
+          console.log("Cannot remove the scooter");
         }
       }
     }
-
+    
 
     
       

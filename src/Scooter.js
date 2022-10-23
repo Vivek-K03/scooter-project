@@ -21,7 +21,7 @@ class Scooter{
 
   dock(station) {
     if (typeof station === 'undefined') {
-      throw new Error('Docking station required!')
+      throw new Error('Docking station required!');
     }
     else {
       this.station = station;

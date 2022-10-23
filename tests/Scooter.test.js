@@ -49,29 +49,30 @@ describe('Test Scooter Rent Method ', () => {
     testScooter.rent();
     expect(spy).toHaveBeenCalledWith("Scooter is broken, please send a repair request.");
   })
+})
 
-  describe('Test Scooter Dock Method', () => {
-    test('Changes stations, isDocked changes to true and User returns and empty string', () => {
-      testScooter.dock("Bronx");
-      expect(testScooter.station).toBe("Bronx");
-      expect(testScooter.isDocked).toBe(true);
-      expect(testScooter.user).toBe("");
-    })
-  })
-
-  describe('Test Scooter Recharge Method', () => {
-    test('Sets scooter charge to 100', async () => {
-      await testScooter.recharge()
-      expect(testScooter.charge).toBe(100)
-    });
-  })
-
-  describe('Test Scooter Recharge Method', () => {
-    test('Testing isBroken turns false after repair and repair is being completed', async () => {
-      const spy = jest.spyOn(console, 'log')
-      await testScooter.requestRepair()
-      expect(testScooter.isBroken).toBe(false)
-      expect(spy).toHaveBeenCalledWith("Repair Complete")
-    })
+describe('Test Scooter Dock Method', () => {
+  test('Changes stations, isDocked changes to true and User returns and empty string', () => {
+    testScooter.dock("Bronx");
+    expect(testScooter.station).toBe("Bronx");
+    expect(testScooter.isDocked).toBe(true);
+    expect(testScooter.user).toBe("");
   })
 })
+
+describe('Test Scooter Recharge Method', () => {
+  test('Sets scooter charge to 100', async () => {
+    await testScooter.recharge();
+    expect(testScooter.charge).toBe(100);
+  });
+})
+
+describe('Test Scooter Recharge Method', () => {
+  test('Testing isBroken turns false after repair and repair is being completed', async () => {
+    const spy = jest.spyOn(console, 'log');
+    await testScooter.requestRepair();
+    expect(testScooter.isBroken).toBe(false);
+    expect(spy).toHaveBeenCalledWith("Repair Complete");
+  });
+});
+

@@ -1,5 +1,5 @@
 const User = require('../src/User')
-const testUser = new User("Rambo", "password", 17)
+const testUser = new User("Rambo", "password", 17);
 
 describe('Test User Class', () => {
     test('User is an object', () => {
